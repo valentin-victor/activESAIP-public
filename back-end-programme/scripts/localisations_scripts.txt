@@ -1,4 +1,0 @@
-backend : "C:\Users\St eloi borne\Desktop\v3\activESAIP\back-end-programme\borne"
-python_back : "C:\Users\St eloi borne\Desktop\v3\activESAIP\back-end-programme\"
-script : "C:\Program Files\Mozilla Firefox\"
-server : "C:\Users\St eloi borne\Desktop\v3\activESAIP\"
