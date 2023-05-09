@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "erasmuses",
+  "info": {
+    "singularName": "erasmus",
+    "pluralName": "erasmuses",
+    "displayName": "erasmus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre_gauche": {
+      "type": "string"
+    },
+    "texte_gauche": {
+      "type": "json"
+    },
+    "titre_milieu": {
+      "type": "string"
+    },
+    "texte_milieu": {
+      "type": "json"
+    },
+    "titre_droite": {
+      "type": "string"
+    },
+    "texte_droite": {
+      "type": "json"
+    }
+  }
+}

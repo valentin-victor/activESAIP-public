@@ -1,0 +1,204 @@
+---------- initialisation ----------
+
+---- formulaire
+
+JSON : diplomes
+
+---- calendrier
+
+texte : titre_gauche
+JSON : elements_gauche
+texte : titre_milieu
+JSON : elements_milieu
+texte : titre_droite
+JSON : elements_droite
+
+---- formations-alternance
+
+texte : titre_gauche
+JSON : elements_gauche
+texte : titre_droite
+JSON : elements_droite
+
+---- formation-initiale
+
+texte : titre_gauche
+JSON : elements_gauche
+texte : titre_milieu
+JSON : elements_milieu
+texte : titre_droite
+JSON : elements_droite
+
+---- formation
+
+texte : texte_gauche
+texte : texte_droite
+
+---- partenariat
+
+texte : titre_gauche
+JSON : elements_gauche
+texte : titre_droite
+JSON : elements_droite
+
+---- erasmus
+
+texte : titre_gauche
+JSON : elements_gauche
+texte : titre_milieu
+JSON : elements_milieu
+texte : titre_droite
+JSON : elements_droite
+
+--------
+
+
+---------- données par défaut ----------
+
+---- formulaire
+-- diplomes
+[
+  "BTS CIEL",
+  "BTS MS",
+  "BTS SAM",
+  "BTS GPME",
+  "Bac Pro SN",
+  "Bac STI2D",
+  "Bac général",
+  "Prépa ATS",
+  "CAP Elctricien"
+]
+--
+
+
+---- calendrier
+-- titre_gauche
+Les dates de JPO
+-- elements_gauche
+[
+  "23 Mars 2023",
+  "15 Avril 2023",
+  "31 Avril 2023"
+]
+-- titre_milieu
+Les Forums
+-- elements_milieu
+[
+  "Forum 1 : lieu / date",
+  "Forum 2 : lieu / date",
+  "Forum 3 : lieu / date",
+  "Forum 4 : lieu / date"
+]
+-- titre_droite
+Autres évènements
+-- elements_droite
+[
+  "Évènement 1 : quoi / lieu / date",
+  "Évènement 2 : quoi / lieu / date",
+  "Évènement 3 : quoi / lieu / date"
+]
+--
+
+
+---- formation alternance
+-- titre_gauche
+Bac Professionel & CAP
+-- elements_gauche
+[
+  "SN - Systèmes numériques"
+]
+-- titre_droite
+Post Bac
+-- elements_droite
+[
+  "BTS CIEL - Cybersécurité, Informatique & Réseaux, Électronique",
+  "BTS MS - Maintenance des Systèmes",
+  "BTS GPME - Gestion de la PME"
+]
+--
+
+
+---- formation-initiale
+-- titre_gauche
+Filières Général et technologique
+-- elements_gauche
+[
+  "Seconde Générale",
+  "Bac Général",
+  "STI2D - Sciences et Technologies de l'Industrie et du Développement Durable"
+]
+-- titre_milieu
+Bac Professionel & CAP
+-- elements_milieu
+[
+  "SN - Systèmes numériques",
+  "MELEC - Métier de l'Électricité et des Environnements Connectés",
+  "MEI - Maintenance des Équipements Industriels",
+  "CAP Électricien"
+]
+-- titre_droite
+Post Bac
+-- elements_droite
+[
+  "BTS CIEL - Cybersécurité, Informatique & Réseaux, Électronique",
+  "BTS MSCP - Maintenance des Systèmes de Production Connectés",
+  "BTS GPME - Gestion de la PME",
+  "BTS SAM - Support à l'Action Managériale",
+  "ATS"
+]
+--
+
+
+---- formation
+-- texte_gauche
+Formations initiales
+-- texte_droite
+Formations en Alternance
+--
+
+
+---- partenaire
+-- titre_gauche
+Écoles d'Ingénieurs
+-- elements_gauche
+[
+  "ESAIP",
+  "ISEN",
+  "ITII",
+  "Les Mines"
+]
+-- titre_droite
+Licence professionnelle WEB
+-- elements_droite
+[
+  "Université Aix-Marseille"
+]
+
+
+---- erasmus
+-- titre_gauche
+L'ERASMUS
+-- elements_gauche
+[
+  "Le programme Erasmus permet aux étudiants européens de suivre une partie de leur cursus dans un autre pays membre de l'Union européenne.",
+  "Le programme offre de nombreuses opportunités pour les étudiants de découvrir de nouvelles cultures, d'améliorer leur niveau de langue et d'élargir leurs horizons académiques.",
+  "Le lycée Saint Eloi participe activement au programme Erasmus et encourage tous ses étudiants à y participer."
+]
+-- titre_milieu
+Ses avantages
+-- elements_milieu
+[
+  "Amélioration de la maîtrise d'une langue étrangère",
+  "Découverte de nouvelles cultures",
+  "Élargissement des horizons académiques",
+  "Opportunités professionnelles accrues",
+  "Développement personnel et élargissement des connaissances"
+]
+-- titre_droite
+Liste de destinations
+-- elements_droite
+[
+  "Destination 1",
+  "Destination 2",
+  "Destination 3"
+]

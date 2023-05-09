@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Liste_Formation.css">
+    <script src="../JS/javascript.js"></script> 
+    <title>titre</title>
+</head>
+<body>
+
+
+<header>
+  <div class="left">
+    <a href="#" onclick="goBack()"><img src="../arrow-back-circle.svg" alt="Retour au menu principal"></a>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+  </div>
+  <div class="middle">
+    <h1>Les formations</h1>
+  </div>
+  <div class="right">
+    <img src="../logo-saint-eloi.png" alt="Image de droite">
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4edff;
+    padding: 10px;
+  }
+  .left img {
+    height: 100px;
+  }
+  .middle h1 {
+    font-size: 70px;
+    margin: 0;
+    text-decoration: underline;
+  }
+  .right img {
+    height: 110px;
+  }
+</style>
+
+    
+<body>
+
+<!--
+	<div class="container3">
+		<div class="block" onclick="location.href='Liste initiale.html'">
+			<div class="catégories">
+				<a href="#">Formations initiales</a>
+			</div>	
+		</div>
+		
+		<div class="block" onclick="location.href='Liste Alternance.html'">
+			<div class="catégories">
+				<a href="#">Formations en Alternance</a>
+			</div>
+		</div>
+		
+		</div>
+-->
+
+	<div class="container3">
+		<div class="block" onclick="location.href='Liste initiale.html'">
+			<div class="catégories">
+				<a id="texte_gauche" href="#">Formations initiales</a>
+			</div>	
+		</div>
+		
+		<div class="block" onclick="location.href='Liste Alternance.html'">
+			<div class="catégories">
+				<a id="texte_droite" href="#">Formations en Alternance</a>
+			</div>
+		</div>
+		
+		</div>
+
+<script>
+// Récupération des éléments HTML des liens
+const lienGauche = document.getElementById("texte_gauche");
+const lienDroite = document.getElementById("texte_droite");
+// Récupération des données de l'API
+fetch("http://localhost:1337/api/formation")
+  .then(response => response.json())
+  .then(data => {
+    // Mise à jour du texte des liens avec les données de l'API
+    lienGauche.textContent = data.data.attributes.texte_gauche;
+    lienDroite.textContent = data.data.attributes.texte_droite;
+  })
+  .catch(error => console.error(error));
+</script>
+
+    
+</body>
+</html>
