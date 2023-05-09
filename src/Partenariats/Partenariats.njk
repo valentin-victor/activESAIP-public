@@ -1,0 +1,67 @@
+---
+layout: layoutPage.njk
+localisationCSS : "Partenariats"
+header_site_texte : "Partenariats du lycée Saint Eloi"
+---
+
+<body>
+
+  <div class="container">
+    <div class="block">
+      <div id="titre_gauche" class="title">Écoles d'Ingénieurs</div>
+      <div id="texte_gauche"></div>
+    </div>
+
+    <div class="block">
+      <div id="titre_milieu" class="title"></div>
+      <div id="texte_milieu"></div>
+    </div>
+
+    <div class="block">
+      <div id="titre_droite" class="title">Licence professionnelle WEB</div>
+      <div id="texte_droite"></div>
+    </div>
+  </div>
+
+  <script>
+    fetch("http://localhost:1337/api/partenariat")
+      .then(response => response.json())
+      .then(data => {
+        const titreGauche = document.querySelector("#titre_gauche");
+        const texteGaucheParent = document.querySelector("#texte_gauche").parentNode;
+        const titreDroite = document.querySelector("#titre_droite");
+        const texteDroiteParent = document.querySelector("#texte_droite").parentNode;
+        const titreMilieu = document.querySelector("#titre_milieu");
+        const texteMilieuParent = document.querySelector("#texte_milieu").parentNode;
+
+        titreGauche.textContent = data.data.attributes.titre_gauche;
+        data.data.attributes.elements_gauche.forEach(element => {
+          const p = document.createElement("p");
+          p.textContent = element;
+          texteGaucheParent.appendChild(p);
+        });
+
+        titreDroite.textContent = data.data.attributes.titre_droite;
+        data.data.attributes.elements_droite.forEach(element => {
+          const p = document.createElement("p");
+          p.textContent = element;
+          texteDroiteParent.appendChild(p);
+        });
+
+        titreMilieu.textContent = data.data.attributes.titre_milieu;
+        if (data.data.attributes.element_milieu) {
+          data.data.attributes.element_milieu.forEach(element => {
+            const p = document.createElement("p");
+            p.textContent = element;
+            texteMilieuParent.appendChild(p);
+          });
+        }
+
+        texteGaucheParent.removeChild(document.querySelector("#texte_gauche"));
+        texteDroiteParent.removeChild(document.querySelector("#texte_droite"));
+        texteMilieuParent.removeChild(document.querySelector("#texte_milieu"));
+      })
+      .catch(error => console.log(error));
+  </script>
+
+</body>

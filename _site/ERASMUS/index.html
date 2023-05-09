@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Erasmus_css.css">
+    <script src="../JS/javascript.js"></script> 
+    <title>titre</title>
+</head>
+<body>
+
+
+<header>
+  <div class="left">
+    <a href="#" onclick="goBack()"><img src="../arrow-back-circle.svg" alt="Retour au menu principal"></a>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+  </div>
+  <div class="middle">
+    <h1>Programme Erasmus</h1>
+  </div>
+  <div class="right">
+    <img src="../logo-saint-eloi.png" alt="Image de droite">
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4edff;
+    padding: 10px;
+  }
+  .left img {
+    height: 100px;
+  }
+  .middle h1 {
+    font-size: 70px;
+    margin: 0;
+    text-decoration: underline;
+  }
+  .right img {
+    height: 110px;
+  }
+</style>
+
+    
+<body>
+
+<!--
+	<div class="container">
+		<div class="block">
+			<div class="title">L'ERASMUS? </div>
+			<p>Le programme Erasmus permet aux étudiants européens de suivre une partie de leur cursus dans un autre pays membre de l'Union européenne. </p>
+			<p>Le programme offre de nombreuses opportunités pour les étudiants de découvrir de nouvelles cultures, d'améliorer leur niveau de langue et d'élargir leurs horizons académiques.</p>
+			<p>Le lycée Saint Eloi participe activement au programme Erasmus et encourage tous ses étudiants à y participer.</p>
+
+		</div>
+
+		<div class="block">
+			<div class="title">Ses avantages</div> 
+			<p>Amélioration de la maîtrise d'une langue étrangère</p>
+			<p>Découverte de nouvelles cultures</p>
+			<p>Élargissement des horizons académiques</p>
+			<p>Opportunités professionnelles accrues</p>
+			<p>Développement personnel et élargissement des connaissances</p>
+		</div>
+			
+
+		<div class="block">
+			<div class="title">Liste de destinations</div> 
+			<p>Destination 1</p>
+			<p>Destination 2</p>
+			<p>Destination 3</p>
+
+		</div>
+	</div>
+-->
+
+<div class="container">
+  <div id="texte_gauche" class="block">
+    <h2 id="titre_gauche" class="title"></h2>
+  </div>
+  <div id="texte_milieu" class="block">
+    <h2 id="titre_milieu" class="title"></h2>
+  </div>
+  <div id="texte_droite" class="block">
+    <h2 id="titre_droite" class="title"></h2>
+  </div>
+</div>
+
+
+<!--
+<script>
+fetch('http://localhost:1337/api/erasmus')
+  .then(response => response.json())
+  .then(data => {
+    const blocks = document.querySelectorAll('.block');
+    for(let i = 0; i < blocks.length; i++) {
+      const titre = blocks[i].querySelector('.title');
+      const texteParent = blocks[i];
+      const texts = data.data.attributes['texte_' + titre.id.split('_')[1]];
+      
+      titre.textContent = data.data.attributes[titre.id];
+      texts.forEach(texte => {
+        const p = document.createElement('p');
+        p.textContent = texte;
+        texteParent.appendChild(p);
+      });
+    }
+  });
+</script>
+-->
+
+	<script> // chargement avec l'API strapi
+fetch('http://localhost:1337/api/erasmus')
+  .then(response => response.json())
+  .then(data => {
+    const datesContainer = document.getElementById('texte_gauche');
+    const forumsContainer = document.getElementById('texte_milieu');
+    const evenementsContainer = document.getElementById('texte_droite');
+    const titreGauche = document.getElementById('titre_gauche');
+    const titreMilieu = document.getElementById('titre_milieu');
+    const titreDroite = document.getElementById('titre_droite');
+      
+    titreGauche.textContent = data.data.attributes.titre_gauche;
+    titreMilieu.textContent = data.data.attributes.titre_milieu;
+    titreDroite.textContent = data.data.attributes.titre_droite;
+    data.data.attributes.elements_gauche.forEach(texte => {
+      const texteElement = document.createElement('p');
+      texteElement.textContent = texte;
+      datesContainer.appendChild(texteElement);
+    });
+    data.data.attributes.elements_milieu.forEach(texte => {
+      const texteElement = document.createElement('p');
+      texteElement.textContent = texte;
+      forumsContainer.appendChild(texteElement);
+    });
+    data.data.attributes.elements_droite.forEach(texte => {
+      const texteElement = document.createElement('p');
+      texteElement.textContent = texte;
+      evenementsContainer.appendChild(texteElement);
+    });
+  })
+  .catch(error => {
+    console.error('Erreur:', error);
+  });
+
+</script>
+
+
+
+</body>
+
+    
+</body>
+</html>

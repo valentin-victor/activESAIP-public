@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "formulaires",
+  "info": {
+    "singularName": "formulaire",
+    "pluralName": "formulaires",
+    "displayName": "formulaire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "diplomes": {
+      "type": "json"
+    }
+  }
+}

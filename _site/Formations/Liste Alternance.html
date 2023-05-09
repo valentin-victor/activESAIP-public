@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Liste_Formation.css">
+    <script src="../JS/javascript.js"></script> 
+    <title>titre</title>
+</head>
+<body>
+
+
+<header>
+  <div class="left">
+    <a href="#" onclick="goBack()"><img src="../arrow-back-circle.svg" alt="Retour au menu principal"></a>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+  </div>
+  <div class="middle">
+    <h1>Les formations en Alternance</h1>
+  </div>
+  <div class="right">
+    <img src="../logo-saint-eloi.png" alt="Image de droite">
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4edff;
+    padding: 10px;
+  }
+  .left img {
+    height: 100px;
+  }
+  .middle h1 {
+    font-size: 70px;
+    margin: 0;
+    text-decoration: underline;
+  }
+  .right img {
+    height: 110px;
+  }
+</style>
+
+    
+<body>
+
+<!--
+	<div class="container2">
+
+		<div class="block">
+			<div class="title">Bac Professionel & CAP</div>
+			<a href="Bac pro SN.html">SN - Systèmes numériques</a><br/>
+		</div>
+			
+
+		<div class="block">
+			<div class="title">Post Bac</div> 
+			<a href="BTS CIEL.html">BTS CIEL - Cybersécurité, Informatique & Réseaux, Électronique</a><br/>
+			<a href="MSCP.html">BTS MS - Maintenance des Systèmes</a><br/>
+            <a href="BTS GPME.html">BTS GPME - Gestion de la PME</a>
+
+		</div>
+	</div>
+-->
+	<div class="container2">
+
+		<div class="block">
+			<div id="titre_gauche" class="title">Bac Professionel & CAP</div>
+			<a id="gauche-1" href="Bac pro SN alternance.html">SN - Systèmes numériques</a><br/>
+		</div>
+			
+
+		<div class="block">
+			<div id="titre_droite" class="title">Post Bac</div> 
+			<a id="droite-1" href="BTS CIEL alternance.html">BTS CIEL - Cybersécurité, Informatique & Réseaux, Électronique</a><br/>
+			<a id="droite-2" href="BTS MS alternance.html">BTS MS - Maintenance des Systèmes</a><br/>
+            <a id="droite-3" href="BTS GPME alternance.html">BTS GPME - Gestion de la PME</a>
+
+		</div>
+	</div>
+
+
+		<script>
+		// Récupération des données de l'API
+		fetch('http://localhost:1337/api/formations-alternance')
+			.then(response => response.json())
+			.then(data => {
+				// Mise à jour du titre et du lien gauche
+				document.getElementById("titre_gauche").innerHTML = data.data.attributes.titre_gauche;
+				document.getElementById("gauche-1").innerHTML = data.data.attributes.elements_gauche[0];
+				
+				// Mise à jour du titre et des liens droits
+				document.getElementById("titre_droite").innerHTML = data.data.attributes.titre_droite;
+				document.getElementById("droite-1").innerHTML = data.data.attributes.elements_droite[0];
+				document.getElementById("droite-2").innerHTML = data.data.attributes.elements_droite[1];
+				document.getElementById("droite-3").innerHTML = data.data.attributes.elements_droite[2];
+			})
+			.catch(error => console.error(error));
+	</script>
+</body>
+    
+</body>
+</html>

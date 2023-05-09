@@ -1,0 +1,95 @@
+---
+permalink: "index.html"
+localisationCSS : "pagePrincipale"
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/pagePrincipale.css">
+    <script src="javascript.js"></script> 
+    <title>title</title>
+
+    
+<header>
+    <div class="left">
+        <p id="current-time"></p>
+
+        <script>
+          // Récupérer l'élément HTML où afficher l'heure actuelle
+          var currentTimeElement = document.getElementById("current-time");
+    
+          // Fonction pour formater l'heure actuelle au format "mois-jours-heures-secondes"
+          function formatCurrentTime() {
+            var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+            var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+            var now = new Date();
+            var day = days[now.getDay()];
+            var date = now.getDate();
+            var month = months[now.getMonth()];
+            var year = now.getFullYear();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            if (seconds < 10) {
+              seconds = "0" + seconds;
+            }
+
+            if (minutes < 10) {
+              minutes = "0" + minutes;
+            }
+
+            if (hours < 10) {
+              hours = "0" + hours;
+            }
+
+            var formattedTime = day + " " + date + " " + month + " " + year + "<br/>" + hours + ":" + minutes + ":" + seconds;
+            return formattedTime;
+          }
+    
+          // Mettre à jour l'heure actuelle toutes les secondes
+          setInterval(function() {
+            var currentTime = formatCurrentTime();
+            currentTimeElement.innerHTML = currentTime;
+          }, 1000);
+        </script>
+  
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+    </div>
+    <div class="middle">
+      <h1>Bienvenue au Lycée Saint Éloi</h1>
+    </div>
+    <div class="right">
+      <img src="../logo-saint-eloi.png" alt="Image de droite">
+    </div>
+  </header>
+  
+
+
+</head>
+<body>
+    <div class="page">
+        <div class="container">
+          <div class="block" onclick="location.href='/Formations/index.html'"><a href="#">Les Formations</a></div>
+          <div class="block" onclick="location.href='/ERASMUS/index.html'"><a href="#">Erasmus +</a></div>
+          <div class="block" onclick="location.href='/Partenariats/index.html'"><a href="#">Partenariats</a></div>
+          <div class="block" onclick="location.href='/Calendrier/index.html'"><a href="#">Calendrier des évènements</a></div>
+          <div class="block" onclick="location.href='/Plan_Batiment/index.html'"><a href="#">Plan des Batiments</a></div>
+          <div class="block" onclick="location.href='/formulaire/index.html'"><a href="#">Formulaire de contact</a></div>          
+          </div>
+        <div class="image">
+            <img class="imageEloi" src="CoursSEloi.jpg" alt="Image">
+        </div>
+
+    </div>
+
+</body>
+</html>
